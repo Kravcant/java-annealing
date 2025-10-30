@@ -69,7 +69,7 @@ public class ProblemSolvingTest {
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
-  } 
+  }
 
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
@@ -88,6 +88,20 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+
+  @Test
+  void testMaxLength_oneWord() {
+    Set<String> input = Set.of("chair");
+    int actual = ProblemSolving.maxLength(input);
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMaxLength_noWords() {
+    Set<String> input = Set.of();
+    int actual = ProblemSolving.maxLength(input);
+    assertEquals(0, actual);
+  }
 
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
