@@ -50,10 +50,11 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    if(words.size() == 0) return 0;
+    if (words.size() == 0)
+      return 0;
     int longestWordLen = 0;
-    for(String word: words) {
-      if(word.length() > longestWordLen) {
+    for (String word : words) {
+      if (word.length() > longestWordLen) {
         longestWordLen = word.length();
       }
     }
@@ -69,6 +70,14 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    if (words.size() == 0)
+      return Integer.MAX_VALUE;
+    int shortest = Integer.MAX_VALUE;
+    for (String word : words) {
+      if (word.length() < shortest) {
+        shortest = word.length();
+      }
+    }
+    return shortest;
   }
 }
