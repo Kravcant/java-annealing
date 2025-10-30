@@ -12,10 +12,11 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    if(words.size() == 0) return true;
-    for(String word : words) {
-      if((Character.toLowerCase(word.charAt(0))!='a')) {
-          return false;
+    if (words.size() == 0)
+      return true;
+    for (String word : words) {
+      if ((Character.toLowerCase(word.charAt(0)) != 'a')) {
+        return false;
       }
     }
     return true;
@@ -30,6 +31,13 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    if (words.size() == 0)
+      return false;
+    for (String word : words) {
+      if (word == "") {
+        return true;
+      }
+    }
     return false;
   }
 
@@ -45,7 +53,7 @@ public class ProblemSolving {
     return 0;
   }
 
- /**
+  /**
    * Returns the length of the shortest word in the set.
    * 
    * Edge case: if set is empty, return Integer.MAX_VALUE
